@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "WJMainView.h"
 
 @interface ViewController ()
 
@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    WJMainView *mainV = [[WJMainView alloc] init];
+    mainV.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    [self.view addSubview:mainV];
 }
 
 

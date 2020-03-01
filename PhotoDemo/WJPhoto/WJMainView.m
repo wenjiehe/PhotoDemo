@@ -27,8 +27,12 @@
 
 - (void)initViewAndInitData
 {
-    PHFetchResult *albums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-    
+    PHFetchResult *ary = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    NSLog(@"ary.count = %ld", ary.count);
+    [ary enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        PHAssetCollection *ac = obj;
+        NSLog(@"startDate = %@, endDate = %@, latitude = %.f, longitude = %.f", ac.startDate, ac.endDate, ac.approximateLocation.coordinate.latitude, ac.approximateLocation.coordinate.longitude);
+    }];
 }
 
 
