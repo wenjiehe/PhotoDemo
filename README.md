@@ -68,5 +68,7 @@ typedef NS_ENUM(NSInteger, PHAssetCollectionSubtype) {
 ## 参考资料
 
 [照片框架](https://objccn.io/issue-21-4/)
+
 [apple官方文档](https://developer.apple.com/documentation/photokit?language=objc)
+
 [PHImageManager](https://nshipster.com/phimagemanager/)
