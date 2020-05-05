@@ -32,9 +32,29 @@
     [ary enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         PHAssetCollection *ac = obj;
         NSLog(@"startDate = %@, endDate = %@, latitude = %.f, longitude = %.f", ac.startDate, ac.endDate, ac.approximateLocation.coordinate.latitude, ac.approximateLocation.coordinate.longitude);
+        for (NSString *str in ac.localizedLocationNames) {
+            NSLog(@"localizedLocationNames = %@", str);
+        }
+        PHFetchResult *fr = [PHAsset fetchAssetsInAssetCollection:ac options:[[PHFetchOptions alloc] init]];
+        
+        for (PHAsset *ass in fr) {
+            [[PHImageManager defaultManager] requestImageForAsset:ass targetSize:CGSizeMake(500, 500) contentMode:PHImageContentModeDefault options:[self requestImage] resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                NSLog(@"result = %@, info = %@", result, info);
+            }];
+        }
     }];
+    
 }
 
+- (PHImageRequestOptions *)requestImage
+{
+    PHImageRequestOptions *reque = [[PHImageRequestOptions alloc] init];
+    reque.synchronous = YES;
+    reque.resizeMode = PHImageRequestOptionsResizeModeFast;
+    reque.deliveryMode = PHImageRequestOptionsDeliveryModeFastFormat;
+    
+    return reque;
+}
 
 
 /*

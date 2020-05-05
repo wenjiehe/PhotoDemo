@@ -9,7 +9,9 @@
 #import "ViewController.h"
 #import "WJMainView.h"
 
-@interface ViewController ()
+@interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -24,5 +26,21 @@
     [self.view addSubview:mainV];
 }
 
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
 
 @end
