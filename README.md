@@ -1,5 +1,15 @@
 # PhotoDemo
 
+## 简介
+
+> 使用PhotoKit框架来获取iCloud Photos和Local photo library的图像资源
+
+## SDKs
+
+* iOS 8.0+
+* macOS 10.11+
+* Mac Catalyst 13.0+
+* tvOS 10.0+
 
 ## 运行环境
 
@@ -64,6 +74,34 @@ typedef NS_ENUM(NSInteger, PHAssetCollectionSubtype) {
     PHAssetCollectionSubtypeAny = NSIntegerMax  //包含所有类型
 };
 ```
+
+* Shared Photo Library
+
+> 使用`PHPhotoLibrary`类,主要是用于获取整个照片应用程序管理的全部资源和集合，包括存储在本地设备上的资源和存储在iCloud Photos中的资源
+
+* Asset Retrieval
+
+* Asset Loading
+
+> 获取图像、视频及实时图片内容，并缓存以便快速重用
+
+1. `PHImageManager`
+
+> 对`Photos`的图片或视频资源提供了加载或生产预览图和全尺寸图片的方法
+
+2. `PHCachingImageManager`
+
+> 对`Photos`的图片或视频资源提供了加载或生产预览图和全尺寸图片的方法，针对预处理巨量的资源进行了优化
+
+* Live Photos
+
+> 使用`PHLivePhoto`类,主要是用于获取实时照片，`Live Photo`对象需要使用`PHLivePhotoView`类来展示
+
+* Asset Resource Management
+
+* Photo Editing Extensions
+
+* macOS Photos Project Extensions
 
 ## 参考资料
 
