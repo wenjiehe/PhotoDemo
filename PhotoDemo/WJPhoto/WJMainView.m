@@ -27,16 +27,16 @@
 
 - (void)initViewAndInitData
 {
-    PHFetchResult *ary = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    PHFetchResult<PHAssetCollection *> *ary = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     NSLog(@"ary.count = %ld", ary.count);
-    [ary enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [ary enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         PHAssetCollection *ac = obj;
-        NSLog(@"startDate = %@, endDate = %@, latitude = %.f, longitude = %.f", ac.startDate, ac.endDate, ac.approximateLocation.coordinate.latitude, ac.approximateLocation.coordinate.longitude);
+        NSLog(@"assetCollectionType = %d, assetCollectionSubtype = %d, startDate = %@, endDate = %@, %@, localizedLocationNames = %@", obj.assetCollectionType, obj.assetCollectionSubtype, obj.startDate, obj.endDate, [NSString stringWithFormat:@"latitude = %f, longitude = %f", obj.approximateLocation.coordinate.latitude, obj.approximateLocation.coordinate.latitude], obj.localizedLocationNames);
         for (NSString *str in ac.localizedLocationNames) {
             NSLog(@"localizedLocationNames = %@", str);
         }
-        PHFetchResult *fr = [PHAsset fetchAssetsInAssetCollection:ac options:[[PHFetchOptions alloc] init]];
-        
+        PHFetchResult<PHAsset *> *fr = [PHAsset fetchAssetsInAssetCollection:ac options:[[PHFetchOptions alloc] init]];
+        NSLog(@"PHAsset.count = %d", fr.count);
         for (PHAsset *ass in fr) {
             [[PHImageManager defaultManager] requestImageForAsset:ass targetSize:CGSizeMake(500, 500) contentMode:PHImageContentModeDefault options:[self requestImage] resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
                 NSLog(@"result = %@, info = %@", result, info);
@@ -56,6 +56,11 @@
     return reque;
 }
 
+
+- (void)requestImageAll
+{
+    
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

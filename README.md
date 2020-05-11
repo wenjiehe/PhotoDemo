@@ -34,7 +34,7 @@ typedef NS_ENUM(NSInteger, PHAssetCollectionType) {
     PHAssetCollectionTypeAlbum      = 1, //从iTunes同步来的相册，以及用户在Photos中自己建立的相册
     PHAssetCollectionTypeSmartAlbum = 2, //经由相机得来的相册
 
-    PHAssetCollectionTypeMoment     API_DEPRECATED("Will be removed in a future release", ios(8, 13), tvos(10, 13)) API_UNAVAILABLE(macos) = 3, //Photos为我们自动生成的时间分组的相册
+    PHAssetCollectionTypeMoment     API_DEPRECATED("Will be removed in a future release", ios(8, 13), tvos(10, 13)) API_UNAVAILABLE(macos) = 3, //时刻，系统自动通过时间和地点生成的分组
 
 };
 
@@ -55,19 +55,19 @@ typedef NS_ENUM(NSInteger, PHAssetCollectionSubtype) {
     PHAssetCollectionSubtypeSmartAlbumGeneric    = 200, //文档解释为非特殊类型的相册，主要包括从 iPhoto 同步过来的相册。
     PHAssetCollectionSubtypeSmartAlbumPanoramas  = 201, //相机拍摄的全景照片
     PHAssetCollectionSubtypeSmartAlbumVideos     = 202, //相机拍摄的视频
-    PHAssetCollectionSubtypeSmartAlbumFavorites  = 203, //收藏文件夹
-    PHAssetCollectionSubtypeSmartAlbumTimelapses = 204, //延时视频文件夹，同时也会出现在视频文件夹中
+    PHAssetCollectionSubtypeSmartAlbumFavorites  = 203, //标记为喜欢、收藏
+    PHAssetCollectionSubtypeSmartAlbumTimelapses = 204, //延时拍摄、定时拍摄
     PHAssetCollectionSubtypeSmartAlbumAllHidden  = 205, //包含隐藏照片或视频的文件夹
     PHAssetCollectionSubtypeSmartAlbumRecentlyAdded = 206, //相机近期拍摄的照片或视频
     PHAssetCollectionSubtypeSmartAlbumBursts     = 207, //连拍模式拍摄的照片
     PHAssetCollectionSubtypeSmartAlbumSlomoVideos = 208, //高速摄影慢动作解析，在该模式下，iOS 设备以120帧拍摄。
     PHAssetCollectionSubtypeSmartAlbumUserLibrary = 209,  //相机相册，所有相机拍摄的照片或视频都会出现在该相册中，而且使用其他应用保存的照片也会出现在这里
-    PHAssetCollectionSubtypeSmartAlbumSelfPortraits API_AVAILABLE(ios(9)) = 210,
-    PHAssetCollectionSubtypeSmartAlbumScreenshots API_AVAILABLE(ios(9)) = 211,
-    PHAssetCollectionSubtypeSmartAlbumDepthEffect API_AVAILABLE(macos(10.13), ios(10.2), tvos(10.1)) = 212,
-    PHAssetCollectionSubtypeSmartAlbumLivePhotos API_AVAILABLE(macos(10.13), ios(10.3), tvos(10.2)) = 213,
-    PHAssetCollectionSubtypeSmartAlbumAnimated API_AVAILABLE(macos(10.15), ios(11), tvos(11)) = 214,
-    PHAssetCollectionSubtypeSmartAlbumLongExposures API_AVAILABLE(macos(10.15), ios(11), tvos(11)) = 215,
+    PHAssetCollectionSubtypeSmartAlbumSelfPortraits API_AVAILABLE(ios(9)) = 210, //使用前置摄像头拍摄的作品
+    PHAssetCollectionSubtypeSmartAlbumScreenshots API_AVAILABLE(ios(9)) = 211, //屏幕截图
+    PHAssetCollectionSubtypeSmartAlbumDepthEffect API_AVAILABLE(macos(10.13), ios(10.2), tvos(10.1)) = 212, //深度效果
+    PHAssetCollectionSubtypeSmartAlbumLivePhotos API_AVAILABLE(macos(10.13), ios(10.3), tvos(10.2)) = 213, //实况照片
+    PHAssetCollectionSubtypeSmartAlbumAnimated API_AVAILABLE(macos(10.15), ios(11), tvos(11)) = 214, //gif格式的集合
+    PHAssetCollectionSubtypeSmartAlbumLongExposures API_AVAILABLE(macos(10.15), ios(11), tvos(11)) = 215, //长曝光照片集合
     PHAssetCollectionSubtypeSmartAlbumUnableToUpload API_AVAILABLE(macos(10.15), ios(13), tvos(13)) = 216,
 
     // Used for fetching, if you don't care about the exact subtype

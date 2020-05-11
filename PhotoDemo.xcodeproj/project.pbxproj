@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D772F4D2464475400C77807 /* WJPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D772F4C2464475400C77807 /* WJPhotoManager.m */; };
 		3D872DEE240B86DF00726FE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D872DED240B86DF00726FE3 /* AppDelegate.m */; };
 		3D872DF1240B86DF00726FE3 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D872DF0240B86DF00726FE3 /* SceneDelegate.m */; };
 		3D872DF4240B86DF00726FE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D872DF3240B86DF00726FE3 /* ViewController.m */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D772F4B2464475400C77807 /* WJPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WJPhotoManager.h; sourceTree = "<group>"; };
+		3D772F4C2464475400C77807 /* WJPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WJPhotoManager.m; sourceTree = "<group>"; };
 		3D872DE9240B86DF00726FE3 /* Photo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D872DEC240B86DF00726FE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D872DED240B86DF00726FE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 			children = (
 				3D872E22240B8FEB00726FE3 /* WJMainView.h */,
 				3D872E23240B8FEB00726FE3 /* WJMainView.m */,
+				3D772F4B2464475400C77807 /* WJPhotoManager.h */,
+				3D772F4C2464475400C77807 /* WJPhotoManager.m */,
 			);
 			path = WJPhoto;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				3D872DF4240B86DF00726FE3 /* ViewController.m in Sources */,
 				3D872DEE240B86DF00726FE3 /* AppDelegate.m in Sources */,
 				3D872E24240B8FEB00726FE3 /* WJMainView.m in Sources */,
+				3D772F4D2464475400C77807 /* WJPhotoManager.m in Sources */,
 				3D872DFF240B86E300726FE3 /* main.m in Sources */,
 				3D872DF1240B86DF00726FE3 /* SceneDelegate.m in Sources */,
 			);
