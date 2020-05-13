@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "WJMainView.h"
+#import "WJPhotoManager.h"
 
 @interface ViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -25,7 +26,11 @@
     mainV.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     [self.view addSubview:mainV];
     
-
+    [[WJPhotoManager shareInstance] getSmartAlbum:PHAssetCollectionTypeSmartAlbum subType:PHAssetCollectionSubtypeAny fetchResult:^(PHFetchResult<PHAsset *> * _Nonnull fetchResult) {
+        [fetchResult enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"PHAssetPlaybackStyle = %d, PHAssetMediaType = %d, PHAssetMediaSubtype = %d, pixelWidth = %d, pixelHeight = %d, creationDate = %@, modificationDate = %@, latitude = %f, longitude = %f, duration = %f, hidden = %d, favorite = %d, PHAssetSourceType = %d", obj.playbackStyle, obj.mediaType, obj.mediaSubtypes, obj.pixelWidth, obj.pixelHeight, obj.creationDate, obj.modificationDate, obj.location.coordinate.latitude, obj.location.coordinate.longitude, obj.duration, obj.hidden, obj.favorite, obj.sourceType);
+        }];
+    }];
 }
 
 

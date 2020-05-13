@@ -20,7 +20,7 @@
 
 工程中必须在Info.plist文件中添加以下健值，否则会崩溃
 
-```
+```Objective-C
     <key>NSPhotoLibraryUsageDescription</key>
     <string>尊敬的用户，请允许APP访问您的相册</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
@@ -29,7 +29,7 @@
 
 ## API介绍
 
-```
+```Objective-C
 typedef NS_ENUM(NSInteger, PHAssetCollectionType) {
     PHAssetCollectionTypeAlbum      = 1, //从iTunes同步来的相册，以及用户在Photos中自己建立的相册
     PHAssetCollectionTypeSmartAlbum = 2, //经由相机得来的相册
@@ -84,6 +84,26 @@ typedef NS_ENUM(NSInteger, PHAssetCollectionSubtype) {
 * Asset Loading
 
 > 获取图像、视频及实时图片内容，并缓存以便快速重用
+
+`PHAsset`表示照片库中一个单独的资源，用来提供资源的元数据。
+
+```Objective-C
+ //以下是PHAsset类的一些属性
+ playbackStyle:使用这个值选择在PHImageManager中显示资源的方式，而不管支持该资源的media type。
+ mediaType:资源类型
+ mediaSubtypes:图片资源又包含了全景图、HDR图片、屏幕截图、Live图片、3Dtouch效果图片、视频流、视频高帧率等
+ pixelWidth:像素宽度
+ pixelHeight:像素高度
+ creationDate:创建时间
+ modificationDate:修改时间
+ location:位置信息
+ duration:时长
+ hidden:验证一个资源是否被用户标记为隐藏
+ favorite:验证一个资源是否被用户标记为收藏
+ representsBurst:验证一个资源是一系列连拍照片中的代表照片
+ burstIdentifier:根据这个值，可以获取连拍照片中剩余的照片
+ burstSelectionTypes:这个值表示这个元数据是否被标记:.None表示没有标记的资源  .UserPick表示用户手动标记的资源  .AutoPick表示用户可能标记的潜在资源
+```
 
 1. `PHImageManager`
 

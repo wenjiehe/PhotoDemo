@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Photos/Photos.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface WJPhotoManager : NSObject
 
 + (instancetype)shareInstance;
+
+/// 根据类型获取所有的图片和视频数据
+- (void)getSmartAlbum:(PHAssetCollectionType)type subType:(PHAssetCollectionSubtype)subType fetchResult:(void(^)(PHFetchResult<PHAsset *> *fetchResult))block;
 
 @end
 

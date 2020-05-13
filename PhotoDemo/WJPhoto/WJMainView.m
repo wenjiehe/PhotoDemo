@@ -20,7 +20,7 @@
 {
     self = [super init];
     if (self) { 
-        [self initViewAndInitData];
+//        [self initViewAndInitData];
     }
     return self;
 }
